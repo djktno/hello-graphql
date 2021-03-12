@@ -1,0 +1,24 @@
+schema {
+    query: Query
+}
+
+type Query {
+    cars: [Car!]!
+    cars(top: Int): [Car]!
+}
+
+
+type Car {
+    vin: String!
+    make: String!
+    model: String!
+    year: String!
+    color: String
+    tires: [Tire]
+}
+
+type Tire {
+    serial: ID!
+    size: String!
+    manufacturer: String!
+}

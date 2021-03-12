@@ -1,0 +1,15 @@
+graphql:
+  servlet:
+    mapping: /api/graphql
+    enabled: true
+    cors-enabled: true
+
+graphiql:
+  mapping: /tools/graphiql
+  endpoint: 
+    graphql: /api/graphql
+  enabled: true
+  pageTitle: GraphiQL
+  cdn:
+    enabled: false
+    version: 0.11.11
