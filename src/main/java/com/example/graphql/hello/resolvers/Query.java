@@ -33,9 +33,17 @@ public class Query implements GraphQLQueryResolver {
             .color("Obsidian Black Metallic")
             .vin("WDDHH7GB4FB123279")
             .build();
+
+        var car3 = Car.builder()
+            .year("2020")
+            .make("Audi")
+            .model("R8 5.2 V10 performance")
+            .color("Kemora Gray Metallic")
+            .vin("WUA4BCFX7L7901592")
+            .build();
             
 
-        return asList(car1, car2);
+        return asList(car1, car2, car3);
     }
 
     public List<Car> topCars(int top) {

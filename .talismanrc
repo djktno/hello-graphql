@@ -3,3 +3,5 @@ fileignoreconfig:
   checksum: fd1742b1ac0f607a6dd89c002ed384815529b7d7816626f59ccd528fe336c81d
 - filename: src/main/java/com/example/graphql/hello/repository/ImageRepository.java
   checksum: e04236adca816908bf1340347a300339add39c5a1a7cdafc0cf453901f124efb
+- filename: src/main/java/com/example/graphql/hello/repository/ImageRepository.java
+  checksum: 126ec4173aa58e8ff11a2ccaf8171a00685b55bf7ca04e7655497b13b9d11bb1

@@ -29,7 +29,12 @@ public class ImageRepository {
             .url("https://bringatrailer.com/wp-content/uploads/2019/03/2015_mercedes-benz_e63s_wagon_1553900690611b920a492f3b2251-Mercedes-benz-363s-1-e1554418614293.jpg")
             .build();
 
-        storage = new ArrayList<>(Arrays.asList(audiImage, mercImage));
+        Image r8Image = Image.builder()
+            .vin("WUA4BCFX7L7901592")
+            .url("https://pictures.dealer.com/aoa-images/244e8f5b47a4b1db1dccbf3ea078b902.png")
+            .build();
+
+        storage = new ArrayList<>(Arrays.asList(audiImage, mercImage, r8Image));
     }
     
     public Image findByVin(String vin) {
