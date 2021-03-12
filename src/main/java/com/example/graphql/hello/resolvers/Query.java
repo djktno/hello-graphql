@@ -2,6 +2,7 @@ package com.example.graphql.hello.resolvers;
 
 import java.util.List;
 import java.util.UUID;
+import java.util.stream.Collectors;
 
 import com.example.graphql.hello.models.Car;
 import com.example.graphql.hello.models.Tire;
@@ -23,14 +24,6 @@ public class Query implements GraphQLQueryResolver {
             .model("RS4")
             .color("Daytona Grey Pearl Effect")
             .vin("WUARU78E87N903887")
-            .tires(asList(
-                    Tire.builder()
-                    .serial(UUID.randomUUID().toString())
-                    .manufacturer("Dunlop")
-                    .size("P255/35R19")
-                    .build()
-                )
-            )
             .build();
 
         var car2 = Car.builder()
@@ -45,7 +38,7 @@ public class Query implements GraphQLQueryResolver {
         return asList(car1, car2);
     }
 
-    public List<Car> cars(int top) {
+    public List<Car> topCars(int top) {
 
         var cars = cars();
         if (cars.size() < top) {
@@ -53,6 +46,15 @@ public class Query implements GraphQLQueryResolver {
         }
 
         return cars.subList(0, top);
+    }
+
+    public Car findByVin(String vin) {
+        List<Car> matched = cars().stream().filter(c -> c.getVin().equalsIgnoreCase(vin)).collect(Collectors.toList());
+
+        if (matched.isEmpty())
+            return null;
+
+        return matched.get(0);
     }
 
     

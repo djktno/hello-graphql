@@ -1,0 +1,5 @@
+fileignoreconfig:
+- filename: src/main/resources/vehicledata.txt
+  checksum: fd1742b1ac0f607a6dd89c002ed384815529b7d7816626f59ccd528fe336c81d
+- filename: src/main/java/com/example/graphql/hello/repository/ImageRepository.java
+  checksum: e04236adca816908bf1340347a300339add39c5a1a7cdafc0cf453901f124efb

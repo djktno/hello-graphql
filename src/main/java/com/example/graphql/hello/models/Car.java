@@ -16,6 +16,6 @@ public class Car {
     private final String model;
     private final String year;
     private final String color;
-    private final List<Tire> tires; 
+    private final Image image;
     
 }

@@ -4,7 +4,8 @@ schema {
 
 type Query {
     cars: [Car!]!
-    cars(top: Int): [Car]!
+    topCars(top: Int): [Car]!
+    findByVin(vin:String): Car
 }
 
 
@@ -14,11 +15,9 @@ type Car {
     model: String!
     year: String!
     color: String
-    tires: [Tire]
+    image: Image
 }
 
-type Tire {
-    serial: ID!
-    size: String!
-    manufacturer: String!
+type Image {
+    url: String
 }
