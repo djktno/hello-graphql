@@ -1,5 +1,8 @@
 package com.example.graphql.hello.controllers;
 
+import java.util.Optional;
+
+import com.example.graphql.hello.ImageNotFoundException;
 import com.example.graphql.hello.models.Image;
 import com.example.graphql.hello.repository.ImageRepository;
 
@@ -20,7 +23,7 @@ public class ImageController {
     @GetMapping("/images/{vin}")
     public Image one(@PathVariable String vin) {
         log.info("Calling through ReST service for image with vin {}", vin);
-        return imageRepository.findByVin(vin);    
+        return Optional.ofNullable(imageRepository.findByVin(vin)).orElseThrow(() -> new ImageNotFoundException(vin));    
     }
     
 }

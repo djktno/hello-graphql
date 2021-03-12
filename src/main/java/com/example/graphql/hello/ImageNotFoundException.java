@@ -7,7 +7,7 @@ public class ImageNotFoundException extends RuntimeException {
      */
     private static final long serialVersionUID = 1L;
 
-    ImageNotFoundException(String vin) {
+    public ImageNotFoundException(String vin) {
         super(String.format("Could not find image for %s", vin));
     }
     
